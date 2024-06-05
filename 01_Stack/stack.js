@@ -3,7 +3,6 @@ class Stack{
         this.stack = []
     }
 
-    //* stack.push()
     push(data){
         this.stack.push(data)
     }
