@@ -18,11 +18,11 @@ class Stack {
         if(this.isEmpty()){
             console.log("Empty stack")
         }
-        return this.stack[this.size() - 1] //* another method => return this.stack[this.stack.length - 1]
+        return this.stack[this.size() - 1] //* another way => return this.stack[this.stack.length - 1]
     }
 
     isEmpty(){
-        return this.size() === 0 //* another method => return this.stack.length === 0
+        return this.size() === 0 //* another way => return this.stack.length === 0
     }
 
     size(){
