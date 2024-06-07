@@ -125,15 +125,39 @@ LinkedList.prototype.traverse = function(){
     console.log(listValues.join(" --> "))
 }
 
+LinkedList.prototype.reverse = function(){
+    if(!this.head){
+        console.log("List is empty")
+        return
+    }
+
+    let current = this.head
+    let prev = null
+    let next = null
+
+    while(current){
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
+    }
+
+    this.head = prev
+}
+
 let list = new LinkedList()
 list.insertAtBeginning(10)
 list.insertAtLast(20)
 list.insertAtAfter(list.head, 15)
-list.traverse()
+list.traverse() //* 10 --> 15 --> 20
+list.reverse()
+list.traverse() //* 20 --> 15 --> 10
+list.reverse()
+list.traverse() //* 10 --> 15 --> 20
 console.log(list.search(15)) //* true
 list.deleteByKey(15)
-list.traverse()
+list.traverse() //* 10 --> 20
 list.deleteFirstNode()
-list.traverse()
+list.traverse() //* 20
 list.deleteLastNode()
-list.traverse()
+list.traverse() //* List is empty

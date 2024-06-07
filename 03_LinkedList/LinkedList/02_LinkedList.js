@@ -124,6 +124,26 @@ class LinkedList {
 
         console.log(listValues.join(" --> "))
     }
+
+    reverse(){
+        if(!this.head){
+            console.log("List is empty")
+            return
+        }
+    
+        let current = this.head
+        let prev = null
+        let next = null
+    
+        while(current){
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        }
+    
+        this.head = prev
+    }
 }
 
 
@@ -131,6 +151,10 @@ let list = new LinkedList()
 list.insertAtBeginning(10)
 list.insertAtLast(20)
 list.insertAfter(list.head, 15)
+list.traverse()
+list.reverse()
+list.traverse()
+list.reverse()
 list.traverse()
 console.log(list.search(15))
 list.deleteByKey(15)
