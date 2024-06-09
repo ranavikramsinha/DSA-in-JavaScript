@@ -59,6 +59,70 @@ doublyLinkedList.prototype.insertAfter = function(prevNode, data){
     }
 }
 
+doublyLinkedList.prototype.deleteFirstNode = function(){
+    if(!this.head){
+        console.log("DLL is empty")
+        return
+    }
+
+    if(this.head === this.tail){
+        this.head = null
+        this.tail = null
+    }
+
+    else{
+        this.head = this.head.next
+        this.head.prev = null
+    }
+}
+
+doublyLinkedList.prototype.deleteLastNode = function(){
+    if(!this.tail){
+        console.log("DLL is empty")
+        return
+    }
+
+    if(this.tail === this.head){
+        this.tail = null
+        this.head = null
+    }
+
+    else{
+        this.tail = this.tail.prev
+        this.tail.next = null
+    }
+}
+
+doublyLinkedList.prototype.reverse = function(){
+    let current = this.head
+    let temp = null
+
+    while(current !== null){
+        temp = current.prev
+        current.prev = current.next
+        current.next = temp
+
+        current = current.prev
+    }
+
+    temp = this.head
+    this.head = this.tail
+    this.tail = temp
+}
+
+doublyLinkedList.prototype.traverse = function(){
+    let current = this.head
+
+    let listValues = []
+
+    while(current){
+        listValues.push(current.data) //* add data to node
+        current = current.next
+    }
+
+    console.log(listValues.join(" --> "))
+}
+
 const list = new doublyLinkedList()
 list.insertAtBeginning(10)
 list.insertAtBeginning(20)
@@ -78,3 +142,13 @@ console.log(list.head.data) // 30
 console.log(list.tail.data) // 60
 console.log(list.head.next.data) // 35
 console.log(list.tail.prev.data) // 50
+
+list.deleteFirstNode()
+console.log(list.head.data) // 35
+
+list.deleteLastNode()
+console.log(list.tail.data) // 50
+
+list.reverse()
+
+list.traverse()
