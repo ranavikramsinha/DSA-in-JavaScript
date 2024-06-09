@@ -13,33 +13,50 @@ class doublyLinkedList{
     }
 }
 
-doublyLinkedList. prototype.insertAtBeginning = function(data){
+doublyLinkedList.prototype.insertAtBeginning = function(data){
     const newNode = new Node (data, this.head, null)
 
-    if(this.head !== null){
+    if(this.head){
         this.head.prev = newNode
     }
 
     this.head = newNode
-    
-    if(this.tail === null){
+
+    if(!this.tail){
         this.tail = newNode
     }
 }
 
-doublyLinkedList.prototype.insertAtLast = function(data){
-    const newNode = new Node(data, null, this.tail)
+doublyLinkedList.prototype.insertAtEnd = function(data){
+    const newNode = new Node (data, null, this.tail)
 
-    if(this.tail !== null){
+    if(this.tail){
         this.tail.next = newNode
     }
 
     this.tail = newNode
 
-    if(this.head === null){
+    if(!this.head){
         this.head = newNode
     }
+}
 
+doublyLinkedList.prototype.insertAfter = function(prevNode, data){
+    if(prevNode === null){
+        console.log("Invalid prev node")
+    }
+
+    const newNode = new Node (data, prevNode.next, prevNode)
+
+    if(prevNode.next !== null){
+        prevNode.next.prev = newNode
+    }
+
+    prevNode.next = newNode
+
+    if(newNode.next === null){
+        this.tail = newNode
+    }
 }
 
 const list = new doublyLinkedList()
@@ -52,11 +69,12 @@ list.insertAtBeginning(30)
 // console.log(list.head.next.data) // 20
 // console.log(list.tail.prev.data) // 20
 
-list.insertAtLast(40)
-list.insertAtLast(50)
-list.insertAtLast(60)
+list.insertAtEnd(40)
+list.insertAtEnd(50)
+list.insertAtEnd(60)
+list.insertAfter(list.head, 35)
 
-// console.log(list.head.data) // 30
-// console.log(list.tail.data) // 60
-// console.log(list.head.next.data) // 20
-// console.log(list.tail.prev.data) // 50
+console.log(list.head.data) // 30
+console.log(list.tail.data) // 60
+console.log(list.head.next.data) // 35
+console.log(list.tail.prev.data) // 50
