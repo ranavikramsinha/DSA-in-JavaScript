@@ -179,6 +179,43 @@ class binarySearchTree{
         }
     }
 
+    depthFirstTraversal(root = this.root){ //* iterative approach
+            if(!root){
+                return [] //* empty
+            }
+        
+            const values = []
+            const stack = [root]
+        
+            while(stack.length > 0){
+                const node = stack.pop()
+                values.push(node.key)
+        
+                if(node.right !== null){
+                    stack.push(node.right)
+                }
+        
+                if(node.left !== null){
+                    stack.push(node.left)
+                }
+            }
+        
+            return values
+        }
+
+    recursiveDFT(root = this.root){ //* recursive approach
+        if(!root){
+            return [] //* empty
+        }
+
+        const leftValues = this.recursiveDFT(root.left)
+        const rightValues = this.recursiveDFT(root.right)
+
+        // return [root.key, leftValues, rightValues]
+
+        return [root.key, ...leftValues, ...rightValues]
+    }    
+
 }
 
 let bst = new binarySearchTree()
@@ -198,3 +235,6 @@ bst.delete(50)
 console.log("In-order Traversal:", bst.inorderTraversal())
 console.log("Pre-order Traversal:", bst.preOrderTraversal())
 console.log("Post-order Traversal:", bst.postOrderTraversal())
+
+console.log(bst.depthFirstTraversal())
+console.log(bst.recursiveDFT())
