@@ -191,11 +191,11 @@ class binarySearchTree{
                 const node = stack.pop()
                 values.push(node.key)
         
-                if(node.right !== null){
+                if(node.right){
                     stack.push(node.right)
                 }
         
-                if(node.left !== null){
+                if(node.left){
                     stack.push(node.left)
                 }
             }
@@ -214,7 +214,31 @@ class binarySearchTree{
         // return [root.key, leftValues, rightValues]
 
         return [root.key, ...leftValues, ...rightValues]
-    }    
+    }
+    
+    breadthFirstSearch(root = this.root){
+        if(!root){
+            return []
+        }
+    
+        const values = []
+        const queue = [root]
+    
+        while(queue.length > 0){
+            const node = queue.shift()
+            values.push(node.key)
+    
+            if(node.left !== null){
+                queue.push(node.left)
+            }
+    
+            if(node.right !== null){
+                queue.push(node.right)
+            }
+        }
+    
+        return values
+    }
 
 }
 
@@ -232,9 +256,10 @@ bst.delete(20)
 bst.delete(30)
 bst.delete(50)
 
-console.log("In-order Traversal:", bst.inorderTraversal())
-console.log("Pre-order Traversal:", bst.preOrderTraversal())
-console.log("Post-order Traversal:", bst.postOrderTraversal())
+console.log("Inorder Traversal:", bst.inorderTraversal()) //* Preorder Traversal: [ 60, 40, 70, 80 ]
+console.log("Preorder Traversal:", bst.preOrderTraversal()) //* Inorder Traversal: [ 40, 60, 70, 80 ]
+console.log("Postorder Traversal:", bst.postOrderTraversal()) //* Postorder Traversal: [ 40, 80, 70, 60 ]
 
-console.log(bst.depthFirstTraversal())
-console.log(bst.recursiveDFT())
+console.log(bst.depthFirstTraversal()) //* [ 60, 40, 70, 80 ]
+console.log(bst.recursiveDFT()) //* [ 60, 40, 70, 80 ]
+console.log(bst.breadthFirstSearch()) //* [ 60, 40, 70, 80 ]
