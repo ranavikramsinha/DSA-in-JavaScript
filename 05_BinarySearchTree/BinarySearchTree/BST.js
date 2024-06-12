@@ -240,6 +240,14 @@ class binarySearchTree{
         return values
     }
 
+    treeSum(root = this.root){
+        if(!root){
+            return 0
+        }
+    
+        return root.key + this.treeSum(root.left) + this.treeSum(root.right)
+    }
+
 }
 
 let bst = new binarySearchTree()
@@ -263,3 +271,4 @@ console.log("Postorder Traversal:", bst.postOrderTraversal()) //* Postorder Trav
 console.log(bst.depthFirstTraversal()) //* [ 60, 40, 70, 80 ]
 console.log(bst.recursiveDFT()) //* [ 60, 40, 70, 80 ]
 console.log(bst.breadthFirstSearch()) //* [ 60, 40, 70, 80 ]
+console.log(bst.treeSum()) //* 250
