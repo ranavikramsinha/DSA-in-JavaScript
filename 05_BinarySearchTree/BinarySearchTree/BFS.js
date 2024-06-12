@@ -14,15 +14,15 @@ function breadthFirstSearch(root){
     const values = []
     const queue = [root]
 
-    while(queue.length > 0){
+    while(queue.length){
         const node = queue.shift()
         values.push(node.key)
 
-        if(node.left !== null){
+        if(node.left){
             queue.push(node.left)
         }
 
-        if(node.right !== null){
+        if(node.right){
             queue.push(node.right)
         }
     }
