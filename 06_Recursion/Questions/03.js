@@ -17,6 +17,6 @@ function p(inputString){
     }
 }
 
-console.log(p("LoL"))
-console.log(p("Mom"))
-console.log(p("False"))
+console.log(p("MOM")) //* true
+console.log(p("LoL")) //* true
+console.log(p("False")) //* false
