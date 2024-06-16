@@ -29,3 +29,22 @@ function depthFirstSearch(graph, start){
 }
 
 depthFirstSearch(graph, 'a') //* The DFS algorithm visits nodes in the order of a, c, d, b starting from node a
+
+console.log("************************************")
+
+//* Recursive
+
+function depthFirstSearchRecursive(graph, start, visited = new Set()){
+
+    if(!visited.has(start)){
+        console.log(start)
+        visited.add(start)
+
+        for(const neighbour of graph[start]){
+            depthFirstSearchRecursive(graph, neighbour, visited)
+        }
+    }
+
+}
+
+depthFirstSearchRecursive(graph, 'a')
