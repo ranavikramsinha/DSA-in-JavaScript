@@ -30,10 +30,10 @@ function depthFirstSearch(graph, start){
     return visited
 }
 
-depthFirstSearch(graph, 'a') //* The DFS algorithm visits nodes in the order of a, c, d, b starting from node a
+// depthFirstSearch(graph, 'a') //* The DFS algorithm visits nodes in the order of a, c, d, b starting from node a
 
 const visitedNodes = depthFirstSearch(graph, 'a')
-console.log(visitedNodes) //* Set(4) { 'a', 'c', 'd', 'b' }
+console.log(visitedNodes) //* a, c, d, b and Set(4) { 'a', 'c', 'd', 'b' }
 
 console.log("************************************")
 
@@ -54,7 +54,7 @@ function depthFirstSearchRecursive(graph, start, visited = new Set()){
 
 }
 
-depthFirstSearchRecursive(graph, 'a')
+// depthFirstSearchRecursive(graph, 'a')  //* The DFSR algorithm visits nodes in the order of a, b, c, d starting from node a
 
 const visitedNodesRecursive = depthFirstSearchRecursive(graph, 'a')
-console.log(visitedNodesRecursive) //* Set(4) { 'a', 'b', 'c', 'd' }
+console.log(visitedNodesRecursive) //* a, b, c, d and Set(4) { 'a', 'b', 'c', 'd' }
