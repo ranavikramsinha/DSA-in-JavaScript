@@ -5,6 +5,7 @@ const graph = {
     d: ['b', 'c'],
 }
 
+//* iterative
 function BFS(graph, start){
     const queue = [start]
     const visited = new Set()
@@ -25,39 +26,42 @@ function BFS(graph, start){
 }
 
 const visitedNodes = BFS(graph, 'a')
-console.log(visitedNodes)
+console.log(visitedNodes) //* b,c,a,d and Set(4) { 'b', 'c', 'a', 'd' }
 
+console.log("*****************************************")
+
+//* recursive
 function BFSR(graph, start) {
-    const visited = new Set();
-    const queue = [start];
+    const visited = new Set()
+    const queue = [start]
+
+    recursiveBFS(queue)  //* start the recursive BFS with the initial queue
     
     function recursiveBFS(queue) {
         if (queue.length === 0) {
-            return;
+            return //* if the queue is empty then return
         }
         
-        const nextQueue = [];
+        const nextQueue = []
         
         for (const node of queue) {
             if (!visited.has(node)) {
-                console.log(node);
-                visited.add(node);
+                console.log(node)  //* print the node
+                visited.add(node) //* mark the node as visited
                 
                 for (const neighbour of graph[node]) {
                     if (!visited.has(neighbour)) {
-                        nextQueue.push(neighbour);
+                        nextQueue.push(neighbour) //* add unvisited neighbors to nextQueue
                     }
                 }
             }
         }
         
-        recursiveBFS(nextQueue);
-    }
+        recursiveBFS(nextQueue) //* recursively call with nextQueue
+    } 
     
-    recursiveBFS(queue);
-    
-    return visited;
+    return visited
 }
 
-const visitedNodesRecursive = BFSR(graph, 'a');
-console.log(visitedNodesRecursive);
+const visitedNodesRecursive = BFSR(graph, 'a')
+console.log(visitedNodesRecursive) //* a,b,c,d & Set(4) { 'a', 'b', 'c', 'd' }
