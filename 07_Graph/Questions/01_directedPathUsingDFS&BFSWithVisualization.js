@@ -24,7 +24,7 @@ const graph = {
 }
 
 
-function hasPathDFS(graph, start, dest){
+function directedPathDFS(graph, start, dest){
     const stack = [start]
     const visited = new Set()
     console.log(`Starting DFS from ${start} to ${dest}`)
@@ -54,7 +54,7 @@ function hasPathDFS(graph, start, dest){
 }
 
 
-function hasPathBFS(graph, start, dest){
+function directedPathBFS(graph, start, dest){
     const queue = [start]
     const visited = new Set()
     console.log(`Starting BFS from ${start} to ${dest}`)
@@ -84,7 +84,7 @@ function hasPathBFS(graph, start, dest){
 }
 
 
-console.log(hasPathDFS(graph, 'a', 'f')) //* true
-console.log(hasPathDFS(graph, 'd', 'e')) //* false
-console.log(hasPathBFS(graph, 'a', 'f')) //* true
-console.log(hasPathBFS(graph, 'd', 'e')) //* false
+console.log(directedPathDFS(graph, 'a', 'f')) //* true
+console.log(directedPathDFS(graph, 'd', 'e')) //* false
+console.log(directedPathBFS(graph, 'a', 'f')) //* true
+console.log(directedPathBFS(graph, 'd', 'e')) //* false
