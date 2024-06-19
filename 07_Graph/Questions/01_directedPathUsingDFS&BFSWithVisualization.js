@@ -83,8 +83,38 @@ function directedPathBFS(graph, start, dest){
     return false
 }
 
+function directedPathRecursive(graph, start, dest, visited = new Set()) {
+    console.log(`Checking path from ${start} to ${dest}`)
+    
+    if (start === dest) {
+        console.log(`Found path to destination: ${dest}`)
+        return true
+    }
+
+    if (visited.has(start)) {
+        console.log(`Already visited ${start}, returning false to avoid cycle.`)
+        return false
+    }
+
+    console.log(`Visiting node: ${start}`)
+    visited.add(start)
+
+    for (const neighbour of graph[start]) {
+        console.log(`Checking neighbor: ${neighbour} of ${start}`)
+        if (directedPathRecursive(graph, neighbour, dest, visited) === true) {
+            console.log(`Path found through neighbor: ${neighbour}`)
+            return true
+        }
+    }
+
+    console.log(`No path found from ${start} to ${dest}, backtracking.`)
+    return false
+}
+
 
 console.log(directedPathDFS(graph, 'a', 'f')) //* true
 console.log(directedPathDFS(graph, 'd', 'e')) //* false
 console.log(directedPathBFS(graph, 'a', 'f')) //* true
 console.log(directedPathBFS(graph, 'd', 'e')) //* false
+console.log(directedPathRecursive(graph, 'a', 'f')) //* true
+console.log(directedPathRecursive(graph, 'd', 'e')) //* false
