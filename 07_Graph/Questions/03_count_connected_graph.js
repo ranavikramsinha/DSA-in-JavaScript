@@ -34,8 +34,16 @@ function connectedIsland(graph){
     return count
 }
 
-console.log(connectedIsland(graph)) //* 2
+console.log(connectedIsland(graph)) //* 3
 
+//* const graph = {
+//*     a: ['b', 'c'],
+//*     b: ['a', 'c', 'd'],
+//*     c: ['a', 'b', 'd'],
+//*     d: ['b', 'c'],
+//*     e: ['f'],
+//*     f: ['e'],
+//* }
 //* 
 //* => Initial State:
 //* 

@@ -31,10 +31,10 @@ function biggestIsland(graph){
 
     for(const node in graph){
         if(!visited.has(node)){
-            const componentSize = dfs(node)
+            const islandSize = dfs(node)
             
-            if(componentSize > largest){
-                largest = componentSize
+            if(islandSize > largest){
+                largest = islandSize
             }
         }
     }
@@ -42,8 +42,16 @@ function biggestIsland(graph){
     return largest
 }
 
-console.log(biggestIsland(graph))
+console.log(biggestIsland(graph)) //* 5
 
+//* const graph = {
+//*     a: ['b', 'c'],
+//*     b: ['a', 'c', 'd'],
+//*     c: ['a', 'b', 'd'],
+//*     d: ['b', 'c'],
+//*     e: ['f'],
+//*     f: ['e'],
+//* }
 //* 
 //* 1. Initialization:
 //*    visited = {}
