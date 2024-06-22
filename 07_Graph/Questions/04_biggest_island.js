@@ -106,3 +106,38 @@ console.log(biggestIsland(graph)) //* 5
 //* 3. Return largest:
 //*    largest = 4
 //* 
+
+
+function smallestIsland(graph){
+    const visited = new Set()
+    let smallest = Infinity
+
+    function dfs(node){
+        if(visited.has(node)){
+            return 0
+        }
+
+        visited.add(node)
+        let size = 1
+
+        for(const neighbour of graph[node]){
+            size += dfs(neighbour) //* size = size + dfs(neighbour)
+        }
+
+        return size
+    }
+
+    for(const node in graph){
+        if(!visited.has(node)){
+            const islandSize = dfs(node)
+            
+            if(islandSize < smallest){
+                smallest = islandSize
+            }
+        }
+    }
+
+    return smallest === Infinity ? 0 : smallest // To handle case with no nodes (graph is empty)
+}
+
+console.log(smallestIsland(graph))
