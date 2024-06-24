@@ -8,7 +8,7 @@ function minCoin(amount, coins, memo = {}){
         return 0
     }
 
-    if(amount < 0){
+    if(amount < 0 || coins.length === 0){
         return -1
     }
 
@@ -35,7 +35,7 @@ function minCoinTab(amount, coins){
 
     if(amount === 0) return 0
 
-    if(amount < 0) return -1
+    if(amount < 0 || coins.length === 0) return -1
 
     let table = Array(amount + 1).fill(Infinity)
 
@@ -63,11 +63,11 @@ function maxCoin(amount, coins, memo = {}){
         return 0
     }
 
-    if(amount < 0){
+    if(amount < 0 || coins.length === 0){
         return -1
     }
 
-    let max = 0
+    let max = -1
 
     for(const coin of coins){
         const result = maxCoin(amount-coin, coins, memo)
@@ -90,7 +90,7 @@ function maxCoinTab(amount, coins){
 
     if(amount === 0) return 0
 
-    if(amount < 0) return -1
+    if(amount < 0 || coins.length === 0) return -1
 
     let table = Array(amount + 1).fill(-Infinity)
 
