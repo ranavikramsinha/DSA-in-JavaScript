@@ -92,17 +92,19 @@ function maxCoinTab(amount, coins){
 
     if(amount < 0) return -1
 
-    let table = Array(amount + 1).fill(0)
+    let table = Array(amount + 1).fill(-Infinity)
 
     table[0] = 0
 
     for(const coin of coins){
         for(let i = coin; i <= amount; i++){
-            table[i] = Math.max(table[i], table[i - coin] + 1)
+            if (table[i - coin] !== -Infinity) {
+                table[i] = Math.max(table[i], table[i - coin] + 1)
+            }
         }
     }
 
-    return table[amount]
+    return table[amount] === -Infinity? -1 : table[amount]
     
 }
 
