@@ -51,7 +51,7 @@ function minCoinTab(amount, coins){
     
 }
 
-console.log(minCoinTab(10, [1,2,5], memo = {})) //* 2
+console.log(minCoinTab(10, [1,2,5])) //* 2
 
 //* Memoization
 function maxCoin(amount, coins, memo = {}){
@@ -108,4 +108,4 @@ function maxCoinTab(amount, coins){
     
 }
 
-console.log(maxCoinTab(10, [1,2,5], {})) //* 10
+console.log(maxCoinTab(10, [1,2,5])) //* 10
