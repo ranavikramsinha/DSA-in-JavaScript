@@ -1,3 +1,5 @@
+//* https://leetcode.com/problems/greatest-common-divisor-of-strings/submissions/1301156931/
+
 var gcdOfStrings = function (str1, str2) {
   if (str1 + str2 !== str2 + str1) {
     return "";
