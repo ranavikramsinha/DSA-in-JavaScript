@@ -11,8 +11,7 @@ var gcdOfStrings = function (str1, str2) {
     return gcd(s2, s1.slice(0, s1.length % s2.length));
   }
 
-  return gcd(s1, s2);
-
+  return gcd(str1, str2);
 };
 
 //* gcdOfStrings("ABCABCABC", "ABCABC")
@@ -29,7 +28,7 @@ var gcdOfStrings = function (str1, str2) {
 //*             |-- Return "ABC"
 //* |
 //* |-- Return "ABC" as the final result
-//* 
+//*
 
 //* gcd euclidean algorithm
 
