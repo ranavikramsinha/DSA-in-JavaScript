@@ -12,7 +12,24 @@ var gcdOfStrings = function (str1, str2) {
   }
 
   return gcd(s1, s2);
+
 };
+
+//* gcdOfStrings("ABCABCABC", "ABCABC")
+//* |
+//* |-- Check if "ABCABCABCABCABC" == "ABCABCABCABCABC"
+//* |   - They are equal, proceed
+//* |
+//* |-- Call gcd("ABCABCABC", "ABCABC")
+//*     |
+//*     |-- gcd("ABCABC", "ABC")
+//*         |
+//*         |-- gcd("ABC", "")
+//*             |
+//*             |-- Return "ABC"
+//* |
+//* |-- Return "ABC" as the final result
+//* 
 
 //* gcd euclidean algorithm
 
