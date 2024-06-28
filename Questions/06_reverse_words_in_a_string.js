@@ -14,8 +14,13 @@
 //   return result.trim(); //* for last space
 // };
 
+// var reverseWords = function (s) {
+//   let string = s.split(" ").filter((word) => word !== "").reverse().join(" ");
+//   return string;
+// };
+
 var reverseWords = function (s) {
-  let string = s.split(" ").filter((word) => word !== "").reverse().join(" ");
+  let string = s.split(" ").filter((word) => word).reverse().join(" ");
   return string;
 };
 
