@@ -1,27 +1,27 @@
-// function bubbleSorting(array){
+//* function bubbleSorting(array){
 
-//     let isSwap;
+//*     let isSwap;
 
-//     do{
+//*     do{
 
-//         isSwap = false
+//*         isSwap = false
 
-//         for(let i = 0; i < array.length - 1; i++){
-//             if(array[i] > array[i+1]){
-//                 const temp = array[i]
-//                 array[i] = array[i+1]
-//                 array[i+1] = temp
-//                 isSwap = true
-//             }
-//         }
+//*         for(let i = 0; i < array.length - 1; i++){
+//*             if(array[i] > array[i+1]){
+//*                 const temp = array[i]
+//*                 array[i] = array[i+1]
+//*                 array[i+1] = temp
+//*                 isSwap = true
+//*             }
+//*         }
 
-//     }while(isSwap)
+//*     }while(isSwap)
 
-//     return array
+//*     return array
 
-// }
+//* }
 
-//  optimized Bubble sort code
+//*  optimized Bubble sort code
 
 function bubbleSorting(array){
 
