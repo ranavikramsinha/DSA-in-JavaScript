@@ -1,6 +1,7 @@
 function insertionSorting(array){
 
-    for(let i = 0; i < array.length; i++){
+    //* The outer for loop starts with i = 1 because the element at index 0 is already considered sorted
+    for(let i = 1; i < array.length; i++){
         let current = array[i]
         let j = i - 1
 
