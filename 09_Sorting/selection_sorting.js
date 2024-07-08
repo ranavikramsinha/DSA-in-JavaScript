@@ -1,4 +1,4 @@
-function selectionSort(array){
+function selectionSorting(array){
 
     const n = array.length
 
@@ -19,3 +19,5 @@ function selectionSort(array){
     return array
 
 }
+
+console.log(selectionSorting([33, 77, 11, 99, 44, 22]))
