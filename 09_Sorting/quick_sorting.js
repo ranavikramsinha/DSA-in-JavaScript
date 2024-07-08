@@ -7,6 +7,8 @@ function quickSorting(array, low = 0, high = array.length - 1){
         quickSorting(array, pivotIndex + 1, high)
     }
 
+    return array
+
 }
 
 function partition(array, low, high){
@@ -28,6 +30,8 @@ function partition(array, low, high){
 
 }
 
-let arr = [10, 7, 8, 9, 1, 5]
-quickSorting(arr)
-console.log('Sorted array:', arr)
+// let arr = [10, 7, 8, 9, 1, 5]
+// quickSorting(arr)
+// console.log('Sorted array:', arr)
+
+console.log(quickSorting([10, 7, 8, 9, 1, 5]))
