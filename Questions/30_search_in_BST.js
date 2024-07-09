@@ -10,7 +10,7 @@ class node{
 
 var searchBST = function(root, val) {
 
-    if(!root === null){
+    if(root === null){
         return null
     }
 
