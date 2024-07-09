@@ -1,9 +1,11 @@
 //* https://leetcode.com/problems/leaf-similar-trees/
 
-function Node(val, left, right) {
-    this.val = (val === undefined ? 0 : val)
-    this.left = (left === undefined ? null : left)
-    this.right = (right === undefined ? null : right)
+class Node {
+    constructor(val = 0, left = null, right = null) {
+        this.val = val
+        this.left = left
+        this.right = right
+    }
 }
 
 var leafSimilar = function(root1, root2) {
