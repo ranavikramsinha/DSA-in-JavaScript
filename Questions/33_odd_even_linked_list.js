@@ -6,9 +6,9 @@ var oddEvenList = function(head) {
         return head
     }
 
-    let oddHead = new ListNode(0)
+    let oddHead = new ListNode()
     let oddTail = oddHead
-    let evenHead = new ListNode(0)
+    let evenHead = new ListNode()
     let evenTail = evenHead
     let index = 1
 
