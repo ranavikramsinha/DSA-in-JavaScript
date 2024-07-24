@@ -34,3 +34,38 @@ var minDistance = function(word1, word2) {
     }
     
 };
+
+//* var minDistance = function(word1, word2) {
+//* 
+//*     m = word1.length
+//*     n = word2.length
+//*     const dp = Array.from({length: m + 1}, () => Array(n + 1).fill(-1));
+//* 
+//*     return edit(word1, word2, m, n)
+//* 
+//*     function edit(w1, w2, m, n){
+//* 
+//*         if(m === 0){
+//*             return n
+//*         }
+//*         else if(n === 0){
+//*             return m
+//*         }
+//* 
+//*         if(dp[m][n] !== -1){
+//*             return dp[m][n]
+//*         }
+//* 
+//*         if(w1[m - 1] === w2[n - 1]){
+//*             return dp[m][n] = edit(w1, w2, m - 1, n - 1)
+//*         }
+//*         else{
+//*             const insertCharacter = 1 + edit(w1, w2, m, n - 1)
+//*             const deleteCharacter = 1 + edit(w1, w2, m - 1, n)
+//*             const replaceCharacter = 1 + edit(w1, w2, m - 1, n - 1)
+//* 
+//*             return dp[m][n] = Math.min(insertCharacter, deleteCharacter, replaceCharacter)
+//*         }
+//*     }
+//*     
+//* };
