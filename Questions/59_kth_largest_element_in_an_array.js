@@ -9,3 +9,33 @@ var findKthLargest = function(nums, k) {
     return largestKthNumber
 
 };
+
+
+// var findKthLargest = function(nums, k) {
+
+//    let maxElement = -Infinity
+
+//    for(let i = 0; i < nums.length; i++){
+//        if(nums[i] > maxElement){
+//            maxElement = nums[i]
+//        }
+//    }
+
+//    const map = {}
+
+//    for(let i = 0; i < nums.length; i++){
+//        const difference = maxElement - nums[i]
+//        map[difference] = (map[difference] || 0) + 1
+//    }
+
+//    let count = 0
+//    let difference = 0
+
+//    while(count < k){
+//        count += (map[difference] || 0)
+//        difference++
+//    }
+
+//    return maxElement - difference + 1
+
+// };
