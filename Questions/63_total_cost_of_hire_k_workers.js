@@ -27,3 +27,12 @@ var totalCost = function(costs, k, candidates) {
     return ans;
     
 };
+
+//* MinPriorityQueue Class:-
+//* 
+//* A MinPriorityQueue is a priority queue where the smallest element has the highest priority. It supports various operations, including:
+//* 
+//* => enqueue(element): Adds an element to the priority queue.
+//* => dequeue(): Removes and returns the element with the highest priority (i.e., the smallest element in a min-heap).
+//* => front(): Returns the element with the highest priority without removing it from the queue.
+//* => size(): Returns the number of elements in the queue.
