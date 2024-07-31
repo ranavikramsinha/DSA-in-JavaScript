@@ -5,6 +5,7 @@ var suggestedProducts = function(products, searchWord) {
     products.sort();
 
     let result = Array.from(Array(searchWord.length), () => new Array());
+    // let result = new Array(searchWord.length).fill(null).map(() => []);
 
     for(let product of products){
         const k = prefix(product);
