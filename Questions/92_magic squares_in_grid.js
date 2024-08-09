@@ -19,7 +19,7 @@ var numMagicSquaresInside = function(grid) {
             }
         }
 
-        let sum = grid[a][b] + grid[a][b + 1] + grid[a][b + 2];
+        let sum = 15; //* sum = grid[a][b] + grid[a][b + 1] + grid[a][b + 2];
 
         for(let i = 0; i < 3; i++){
             if(grid[a + i][b] + grid[a + i][b + 1] + grid[a + i][b + 2] !== sum){
