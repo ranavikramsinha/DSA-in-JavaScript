@@ -36,13 +36,16 @@ var canCompleteCircuit = function(gas, cost) {
 //* Greedy Approach
 var canCompleteCircuit = function(gas, cost) {
     let n = gas.length;
-    let totalEarning = 0;
-    let totalSpending = 0;
+    let totalEarning = gas.reduce((a, b) => a + b, 0);
+    let totalSpending = cost.reduce((a, b) => a + b, 0);
+    
+    // let totalEarning = 0;
+    // let totalSpending = 0;
 
-    for(let i = 0; i < n; i++){
-        totalEarning += gas[i];
-        totalSpending += cost[i];
-    }
+    // for(let i = 0; i < n; i++){
+    //     totalEarning += gas[i];
+    //     totalSpending += cost[i];
+    // }
 
     if(totalEarning < totalSpending){
         return -1;
