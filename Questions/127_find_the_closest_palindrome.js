@@ -12,7 +12,8 @@ var nearestPalindromic = function(n) {
     results.add(BigInt(Math.pow(10, length - 1)) - 1n);
     results.add(BigInt(Math.pow(10, length)) + 1n);
 
-    let difference = BigInt(Number.MAX_SAFE_INTEGER);
+    // let difference = BigInt(Number.MAX_SAFE_INTEGER);
+    let difference = Infinity;
     let result = 0;
     let actualNumber = BigInt(n);
 
