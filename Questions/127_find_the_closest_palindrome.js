@@ -3,7 +3,8 @@
 var nearestPalindromic = function(n) {
     let length = n.length;
     let middle = Math.ceil(length / 2);
-    let halfOfN = BigInt(n.slice(0, middle), 10);
+    let halfOfN = BigInt(n.slice(0, middle));
+    // let halfOfN = BigInt(n.slice(0, middle), 10);
     let results = new Set();
 
     results.add(makePalindrome(halfOfN, length % 2 === 0));
