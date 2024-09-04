@@ -16,10 +16,10 @@ var robotSim = function(commands, obstacles) {
 
     for(let i = 0; i < commands.length; i++){
         if(commands[i] === -2){
-            direction = [-direction[1], direction[0]];
+            direction = [-direction[1], direction[0]]; //* (x, y) = (-y, x) => left 90 degrees
         }
         else if(commands[i] === -1){
-            direction = [direction[1], -direction[0]];
+            direction = [direction[1], -direction[0]]; //* (x, y) = (y, -x) => right 90 degrees
         }
         else{
             for(let j = 0; j < commands[i]; j++){
