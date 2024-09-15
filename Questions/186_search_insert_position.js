@@ -11,11 +11,10 @@ var searchInsert = function(nums, target) {
         if(target === nums[middle]){
             return middle;
         }
-
-        if(target > nums[middle]){
+        else if(target > nums[middle]){
             left = middle + 1;
         }
-        else{
+        else if(target < nums[middle]){
             right = middle - 1;
         }
     }
