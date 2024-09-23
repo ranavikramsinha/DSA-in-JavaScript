@@ -19,12 +19,12 @@ var minExtraChar = function(s, dictionary) {
         let currentString = "";
         let minExtra = n;
 
-        for(let i = index; i < n; i++){
-            currentString += str[i];
+        for(let length = index; length < n; length++){
+            currentString += str[length];
 
             let currentExtra = (set.has(currentString)) ? 0 : currentString.length;
 
-            let remainExtra = solve(i + 1, str);
+            let remainExtra = solve(length + 1, str);
 
             let totalExtra = currentExtra + remainExtra;
 
