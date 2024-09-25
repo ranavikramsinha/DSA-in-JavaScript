@@ -36,6 +36,12 @@ var exist = function(board, word) {
             }
         }
 
+        // for (let [newI, newJ] of directions) {
+        //     if(solve(board, i + newI, j + newJ, index + 1, word)){
+        //         return true;
+        //     }
+        // }
+
         board[i][j] = temp;
         return false;
     }
