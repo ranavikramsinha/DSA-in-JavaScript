@@ -5,6 +5,14 @@ var rangeSumBST = function(root, low, high) {
         return 0;
     }
 
+    if(root.val < low){
+        return rangeSumBST(root.right, low, high);
+    }
+
+    if(root.val > high){
+        return rangeSumBST(root.left, low, high);
+    }
+
     let currentValue = 0;
 
     if(root.val >= low && root.val <= high){
