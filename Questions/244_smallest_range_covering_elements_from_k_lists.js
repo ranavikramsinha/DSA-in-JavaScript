@@ -3,6 +3,43 @@
 //* tc O(nlog(k)) | sc O(k)
 var smallestRange = function(nums) {
     let k = nums.length;
+    let minHeap = new MinPriorityQueue({priority: (x) => x[0]});
+    let maxElement = -Infinity;
+
+    for(let i = 0; i < k; i++){
+        minHeap.enqueue([nums[i][0], i, 0]);
+        maxElement = Math.max(maxElement, nums[i][0]);
+    }
+
+    let range = [-1000000, 1000000];
+
+    while(minHeap.size()){
+        let dequeuedItem = minHeap.dequeue();
+        let minElement = dequeuedItem.element[0];
+        let listIndex = dequeuedItem.element[1];
+        let elementIndex = dequeuedItem.element[2];
+
+        if(maxElement - minElement < range[1] - range[0]){
+            range[0] = minElement;
+            range[1] = maxElement;
+        }
+
+        if(elementIndex + 1 < nums[listIndex].length){
+            let nextElement = nums[listIndex][elementIndex + 1];
+            minHeap.enqueue([nextElement, listIndex, elementIndex + 1]);
+            maxElement = Math.max(maxElement, nextElement);
+        }
+        else{
+            break;
+        }
+    }
+
+    return range;
+};
+
+//* tc O(n * k)) | sc O(k)
+var smallestRange = function(nums) {
+    let k = nums.length;
     let arr = new Array(k).fill(0);
     let range = [-1000000, 1000000];
 
