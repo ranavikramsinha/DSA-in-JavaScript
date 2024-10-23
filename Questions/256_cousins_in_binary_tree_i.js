@@ -1,5 +1,6 @@
 //* https://leetcode.com/problems/cousins-in-binary-tree/
 
+//* tc O(n) | sc O(n)
 var isCousins = function(root, x, y) {
     let queue = [root];
 
