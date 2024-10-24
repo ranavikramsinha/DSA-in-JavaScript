@@ -1,5 +1,6 @@
 //* https://leetcode.com/problems/flip-equivalent-binary-trees/
 
+//* tc O(4 * n) | sc O(h) - where h is the height or depth of the tree
 var flipEquiv = function(root1, root2) {
 
     if(root1 === null && root2 === null){
