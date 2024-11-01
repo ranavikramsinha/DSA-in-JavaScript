@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/delete-characters-to-make-fancy-string/
 
-//* tc O(n) | sc O(n)
+//* tc O(n) | sc O(1)
 var makeFancyString = function(s) {
 
     let result = "";
