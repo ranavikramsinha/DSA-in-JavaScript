@@ -11,7 +11,7 @@ var rotateString = function(s, goal) {
         s = s.slice(1) + s[0];
 
         if(s === goal){
-            return true;s
+            return true;
         }
 
     }
