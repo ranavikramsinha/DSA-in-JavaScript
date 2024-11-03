@@ -57,3 +57,42 @@ var parseBoolExpr = function(expression) {
         }
     }
 };
+
+
+var parseBoolExpr = function(s) {
+    
+    const n = s.length;
+    const st = [];
+
+    for (let i = 0; i < n; i++) {
+        if (s[i] === ',') continue;
+
+        if (s[i] === ')') {
+            let values = [];
+            // Gather all values inside the parentheses
+            while (st[st.length - 1] !== '(') {
+                values.push(st.pop());
+            }
+            st.pop();  // Remove '('
+            const op = st.pop();  // Remove the operator
+            st.push(solveOp(op, values));
+        } else {
+            st.push(s[i]);
+        }
+    }
+
+    return st[st.length - 1] === 't';
+
+    function solveOp(op, values) {
+        if (op === '!') 
+            return values[0] === 't' ? 'f' : 't';
+    
+        if (op === '&') 
+            return values.some((ch) => ch === 'f') ? 'f' : 't';
+    
+        if (op === '|') 
+            return values.some((ch) => ch === 't') ? 't' : 'f';
+    
+        return 't'; // Unreachable
+    }
+}
