@@ -1,5 +1,6 @@
 //* https://leetcode.com/problems/minimum-number-of-changes-to-make-binary-string-beautiful/
 
+//* tc O(n) | sc O(1)
 var minChanges = function(s) {
 
     let n = s.length;
