@@ -36,3 +36,36 @@ var canSortArray = function(nums) {
         return count;
     }
 };
+
+//* tc O(n) | sc O(1)
+var canSortArray = function(nums) {
+    let numOfSetBits = nums[0].toString(2).split('1').length - 1;
+    let maxOfSegment = nums[0];
+    let minOfSegment = nums[0];   
+    let maxOfPrevSegment = -Infinity;
+        
+    for (let i = 1; i < nums.length; i++) {
+        const currentSetBits = nums[i].toString(2).split('1').length - 1;
+            
+        if(currentSetBits === numOfSetBits){
+            maxOfSegment = Math.max(maxOfSegment, nums[i]);
+            minOfSegment = Math.min(minOfSegment, nums[i]);
+        }
+        else{
+            if (minOfSegment < maxOfPrevSegment){
+                return false;
+            }
+                
+            maxOfPrevSegment = maxOfSegment;
+            maxOfSegment = nums[i];
+            minOfSegment = nums[i];
+            numOfSetBits = currentSetBits;
+        }
+    }
+        
+    if (minOfSegment < maxOfPrevSegment) {
+        return false;
+    }
+        
+    return true;  
+};
