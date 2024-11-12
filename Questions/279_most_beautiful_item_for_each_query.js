@@ -18,7 +18,7 @@ var maximumBeauty = function(items, queries) {
     let result = new Array(m).fill(0);
 
     for(let i = 0; i < m; i++){
-        let current = queries[i];
+        let currentPriceLimit = queries[i];
         let left = 0;
         let right = n - 1;
         let profit = -1
@@ -26,7 +26,7 @@ var maximumBeauty = function(items, queries) {
         while(left <= right){
             let middle = left + Math.trunc((right - left) / 2);
 
-            if(items[middle][0] > current){
+            if(items[middle][0] > currentPriceLimit){
                 right = middle - 1;
             }
             else{
