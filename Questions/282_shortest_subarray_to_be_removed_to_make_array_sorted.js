@@ -11,13 +11,17 @@ var findLengthOfShortestSubarray = function(arr) {
         left++;
     }
 
+    if(left === n - 1){
+        return 0;
+    }
+
     while(right - 1 >= 0 && arr[right] >= arr[right - 1]){
         right--;
     }
 
-    if(left >= right){
-        return 0;
-    }
+    // if(left >= right){
+    //     return 0;
+    // }
     
     let ans = right;
     let i = 0;
