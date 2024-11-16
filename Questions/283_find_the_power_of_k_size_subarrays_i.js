@@ -15,7 +15,7 @@ var resultsArray = function(nums, k) {
             increasingOrderSubarraySize = 1;
         }
 
-        if(i >= k - 1){
+        if(i >= k - 1){ //* k - 1 because of 0(zero) based indexing
             if(increasingOrderSubarraySize >= k){
                 result.push(nums[i]);
             }
