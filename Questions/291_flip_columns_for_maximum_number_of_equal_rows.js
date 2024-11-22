@@ -29,3 +29,11 @@ var maxEqualRowsAfterFlips = function(matrix) {
 
     return maxRows;
 };
+
+//* Input Matrix:
+//* [ 0, 1, 1 ]    →   Row Pattern: "SBB"    →   Map: { "SBB": 1 }
+//* [ 1, 0, 0 ]    →   Row Pattern: "SBB"    →   Map: { "SBB": 2 }
+//* [ 0, 1, 1 ]    →   Row Pattern: "SBB"    →   Map: { "SBB": 3 }
+//* 
+//* Max Rows = Maximum frequency in Map = 3
+//* 
