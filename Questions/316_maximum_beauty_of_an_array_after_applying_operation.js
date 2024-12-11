@@ -20,5 +20,4 @@ var maximumBeauty = function(nums, k) {
     }
 
     return maximumBeauty;
-    
 };
