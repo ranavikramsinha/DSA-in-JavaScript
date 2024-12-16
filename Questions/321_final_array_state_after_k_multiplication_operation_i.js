@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i/
 
-//* tc O(nlogn + klogn) | sc O(n)
+//* tc O(nlogn + k * nlogn) | sc O(n)
 
 var getFinalState = function(nums, k, multiplier) {
     let n = nums.length;
