@@ -33,3 +33,29 @@ var getFinalState = function(nums, k, multiplier) {
 
     return nums;
 };
+
+//* tc O(nlogn + klogn) | sc O(n)
+
+var getFinalState = function(nums, k, multiplier) {
+    let n = nums.length;
+    let minHeap = new MinPriorityQueue({ compare: (a, b) => {
+        if(a[0] === b[0]){
+            return a[1] - b[1];
+        }
+
+        return a[0] - b[0];
+    }});
+
+    for(let i = 0; i < n; i++){
+        minHeap.enqueue([nums[i], i]);
+    }
+
+    while(k > 0){
+        let [smallestValue, index] = minHeap.dequeue();
+        nums[index] *= multiplier;
+        minHeap.enqueue([nums[index], index]);
+        k--;
+    }
+
+    return nums;
+};
