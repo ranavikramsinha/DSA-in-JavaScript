@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees/
 
-//* tc O(n) | sc O(n)
+//* tc O(V1 + E1 + V2 + E2) | sc O(V1 + E1 + V2 + E2) where V1 is the number of nodes in tree 1, E1 is the number of edges in tree 1, V2 is the number of nodes in tree 2, E2 is the number of edges in tree 2
 
 var minimumDiameterAfterMerge = function(edges1, edges2) {
     let adjacencyList1 = adjacencyList(edges1);
