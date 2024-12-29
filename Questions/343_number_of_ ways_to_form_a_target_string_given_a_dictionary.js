@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/number-of-ways-to-form-a-target-string-given-a-dictionary/
 
-//* DFS :- tc O(2 ^ m * n) | sc O(m * n)
+//* DFS :- tc O(m * n) | sc O(m * n)
 
 var numWays = function(words, target) {
 
