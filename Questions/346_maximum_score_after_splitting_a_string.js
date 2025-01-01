@@ -23,3 +23,30 @@ var maxScore = function(s) {
     return result;
     
 };
+
+//* 1 pass solution :- tc O(n) | sc O(1)
+var maxScore = function(s) {
+
+    let n = s.length;
+    let result = -Infinity;
+    let oneCount = 0
+    let zeroCount = 0;
+
+    for(let i = 0; i < n - 1; i++){
+        if(s[i] === '1'){
+            oneCount++;
+        }
+        else if(s[i] === '0'){
+            zeroCount++;
+        }
+
+        result = Math.max(result, zeroCount - oneCount);
+    }
+
+    if(s[n - 1] === '1'){
+        oneCount++;
+    }
+
+    return result + oneCount;
+    
+};
