@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/count-vowel-strings-in-ranges/
 
-//* tc O(n) | sc O(n)
+//* tc O(n + m) | sc O(n + m)
 
 var vowelStrings = function(words, queries) {
 
