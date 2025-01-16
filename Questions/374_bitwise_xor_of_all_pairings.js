@@ -26,3 +26,26 @@ var xorAllNums = function(nums1, nums2) {
 
     return ans;
 };
+
+//* tc O(m + n) | sc O(1)
+
+var xorAllNums = function(nums1, nums2) {
+
+    let m = nums1.length;
+    let n = nums2.length;
+    let ans = 0;
+
+    if(m % 2 !== 0){
+        for(let num of nums2){
+            ans ^= num;
+        }
+    }
+
+    if(n % 2 !== 0){
+        for(let num of nums1){
+            ans ^= num;
+        }
+    }
+
+    return ans;
+};
