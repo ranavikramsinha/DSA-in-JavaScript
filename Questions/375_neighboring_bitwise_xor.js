@@ -29,3 +29,17 @@ var doesValidArrayExist = function(derived) {
     return false;
 
 };
+
+//* tc O(n) | sc O(1)
+
+var doesValidArrayExist = function(derived) {
+
+    let result = 0;
+
+    for(let i of derived){
+        result ^= i;
+    }
+
+    return result === 0;
+
+};
