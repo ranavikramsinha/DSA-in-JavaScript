@@ -1,6 +1,6 @@
-//* 
+//* https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
 
-//* 
+//* tc O(n) | sc O(1)
 
 var check = function(nums) {
 
