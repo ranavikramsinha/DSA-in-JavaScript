@@ -19,3 +19,22 @@ var clearDigits = function(s) {
     return arr.join('');
     
 };
+
+//* tc O(n) | sc O(n)
+
+var clearDigits = function(s) {
+
+    let n = s.length;
+    let arr = s.split('');
+
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] >= '0' && arr[i] <= '9'){
+            arr.splice(i, 1);
+            arr.splice(i - 1, 1);
+            i = -1;
+        }
+    }
+
+    return arr.join('');
+    
+};
