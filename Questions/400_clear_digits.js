@@ -57,3 +57,22 @@ var clearDigits = function(s) {
     return ans;
     
 };
+
+//* tc O(n) | sc O(n)
+
+var clearDigits = function(s) {
+
+    let ans = '';
+
+    for(let char of s){
+        if(char >= '0' && char <= '9'){
+            ans = ans.slice(0, -1);
+        }
+        else{
+            ans += char;
+        }
+    }
+
+    return ans;
+    
+};
