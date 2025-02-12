@@ -1,5 +1,74 @@
 //* https://leetcode.com/problems/max-sum-of-a-pair-with-equal-sum-of-digits/
 
+//* tc O(n) | sc O(1)
+
+var maximumSum = function(nums) {
+
+    let n = nums.length;
+    let arr = new Array(90).fill(-1);
+    let ans = -1;
+
+    for(let i = 0; i < n; i++){
+        let sum = digitSum(nums[i]);
+
+        if(arr[sum] !== -1){
+            ans = Math.max(ans, nums[i] + arr[sum]);
+        }
+
+        arr[sum] = Math.max(nums[i], arr[sum]);
+    }
+
+    return ans;
+
+    function digitSum(num){
+        let sum = 0;
+
+        while(num){
+            sum += num % 10;
+            num = Math.floor(num / 10);
+        }
+
+        return sum;
+    } 
+};
+
+//* tc O(n) | sc O(n)
+
+var maximumSum = function(nums) {
+
+    let n = nums.length;
+    let map = new Map();
+    let ans = -1;
+
+    for(let i = 0; i < n; i++){
+        let sum = digitSum(nums[i]);
+
+        if(map.get(sum)){
+            ans = Math.max(ans, nums[i] + map.get(sum));
+
+            map.set(sum, Math.max(map.get(sum), nums[i]));
+        }
+        else{
+            map.set(sum, nums[i]);
+        }
+        
+    }
+
+    return ans;
+
+    function digitSum(num){
+        let sum = 0;
+
+        while(num){
+            sum += num % 10;
+            num = Math.floor(num / 10);
+        }
+
+        return sum;
+    }
+    
+};
+
 //* tc O(n^2 × d) | sc O(1) where d is the number of digits (give TLE btw)
 
 var maximumSum = function(nums) {
