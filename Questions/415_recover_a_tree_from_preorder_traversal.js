@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/
 
-//* 
+//* tc O(n) | sc O(n)
 
 var recoverFromPreorder = function(traversal) {
 
