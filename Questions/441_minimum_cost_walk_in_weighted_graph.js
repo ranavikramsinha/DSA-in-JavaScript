@@ -5,11 +5,11 @@
 var minimumCost = function(n, edges, query) {
 
     let roots = new Array(n);
-    let componentCosts = new Array(n);
+    let componentCosts = new Array(n).fill(-1);
 
-    for(let node = 0; node < n; node++){
-        roots[node] = node;
-        componentCosts[node] = -1;
+    for(let i = 0; i < n; i++){
+        roots[i] = i;
+        componentCosts[i] = -1;
     }
 
     for(let [u, v, w] of edges){
