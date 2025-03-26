@@ -25,6 +25,9 @@ var minOperations = function(grid, x) {
     let median = arr[Math.trunc(arrLen / 2)];
 
     for(let num of arr){
+        // if(num % x !== median % x){
+        //     return -1;
+        // }
         result += Math.abs(median - num) / x;
     }
 
