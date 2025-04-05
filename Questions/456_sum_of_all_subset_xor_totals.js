@@ -1,6 +1,27 @@
 //* https://leetcode.com/problems/sum-of-all-subset-xor-totals/
 
-//* tc O(2^n) | sc O(2^n)
+//* tc O(2^n) | sc O(n)
+
+var subsetXORSum = function(nums) {
+
+    let n = nums.length;
+
+    return solve(0, 0);
+
+    function solve(i, xor){
+        if(i === n){
+            return xor
+        }
+
+        let include = solve(i + 1, nums[i] ^ xor);
+        let exclude = solve(i + 1, xor);
+
+        return include + exclude;
+    }
+    
+};
+
+//* tc O(2^n * L) | sc O(2^n * L) where L is subsets length
 
 var subsetXORSum = function(nums) {
 
