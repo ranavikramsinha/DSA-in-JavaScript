@@ -19,3 +19,37 @@ var minimumOperations = function(nums) {
     return count;
 
 };
+
+//* tc O(2^n) | sc O(n)
+
+var minimumOperations = function(nums) {
+
+    let n = nums.length;
+    let count = 0;
+
+    for(let i = 0; i < n; i += 3){
+        if(solve(i) === true){
+            return count;
+        }
+
+        count++;
+    }
+
+    return count;
+
+    function solve(index){
+
+        let set = new Set();
+
+        for(let i = index; i < n; i++){
+            if(set.has(nums[i])){
+                return false;
+            }
+
+            set.add(nums[i]);
+        }
+
+        return true;
+    }
+
+};
