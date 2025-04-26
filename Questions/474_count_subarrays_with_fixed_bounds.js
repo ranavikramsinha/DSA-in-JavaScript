@@ -23,8 +23,8 @@ var countSubarrays = function(nums, minK, maxK) {
             maxKValuePosition = i;
         }
 
-        let minimum = Math.min(minKValuePosition, maxKValuePosition);
-        let validSubArray = minimum - valueGreaterAndLessThanMaxAndMinPosition;
+        let smallerIndex = Math.min(minKValuePosition, maxKValuePosition);
+        let validSubArray = smallerIndex - valueGreaterAndLessThanMaxAndMinPosition;
 
         result += (validSubArray <= 0) ? 0 : validSubArray;
     }
