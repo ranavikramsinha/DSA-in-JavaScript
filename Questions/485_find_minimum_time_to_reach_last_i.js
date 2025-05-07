@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/find-minimum-time-to-reach-last-room-i/
 
-//* tc O(v + e) where v is the number of cells and e is the number of edges (direction) | sc O(m * n)
+//* tc O(v + e) where v is the number of cells and e is the number of edges (directions) | sc O(m * n)
 
 var minTimeToReach = function(moveTime) {
 
