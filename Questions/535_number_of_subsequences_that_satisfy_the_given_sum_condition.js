@@ -24,7 +24,7 @@ var numSubseq = function(nums, target) {
         if(nums[left] + nums[right] <= target){
             let difference = right - left;
 
-            result = (result % modulo + powerUpToN[difference]) % modulo;
+            result = (result + powerUpToN[difference]) % modulo;
             left++;
         }
         else{
