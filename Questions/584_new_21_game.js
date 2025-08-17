@@ -29,5 +29,5 @@ var new21Game = function(n, k, maxPts) {
         }
     }
 
-    return result;
+    return Number(result.toFixed(5));
 };
