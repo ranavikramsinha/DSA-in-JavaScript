@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/count-submatrices-with-all-ones/
 
-//* tc : O(row ^ 2 * col) | sc : O(row * col)
+//* tc : O(row ^ 2 * col) | sc : O(col)
 
 var numSubmat = function(mat) {
 
