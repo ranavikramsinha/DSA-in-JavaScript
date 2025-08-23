@@ -23,7 +23,7 @@ var minimumSum = function(grid) {
     }
         
         //* rotateAntiClockWise
-    //     function rotateClockWise(grid){
+    //     function rotateAntiClockWise(grid){
     //     let m = grid.length;
     //     let n = grid[0].length;
 
@@ -99,6 +99,7 @@ var minimumSum = function(grid) {
 
     let minimumTotalAreaResult = calculationMinimumAreaPartition(grid);
     let rotatedGrid = rotateClockWise(grid);
+    // let rotatedGrid = rotateAntiClockWise(grid);
 
     minimumTotalAreaResult = Math.min(minimumTotalAreaResult, calculationMinimumAreaPartition(rotatedGrid));
 
