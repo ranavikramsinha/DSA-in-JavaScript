@@ -21,6 +21,22 @@ var minimumSum = function(grid) {
 
         return rotatedGrid;
     }
+        
+        //* rotateAntiClockWise
+    //     function rotateClockWise(grid){
+    //     let m = grid.length;
+    //     let n = grid[0].length;
+
+    //     let rotatedGrid = Array.from({ length: n }, () => Array(m).fill(0));
+
+    //     for(let i = 0; i < m; i++){
+    //         for(let j = 0; j < n; j++){
+    //             rotatedGrid[n - j - 1][i] = grid[i][j];
+    //         }
+    //     }
+
+    //     return rotatedGrid;
+    // }
 
     function minimumArea(startRow, endRow, startCol, endCol, grid){
         let m = grid.length;
