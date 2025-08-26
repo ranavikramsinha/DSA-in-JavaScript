@@ -14,15 +14,15 @@ var areaOfMaxDiagonal = function(dimensions) {
         let currentDiagonal = (x * x) + (y * y);
         let area = x * y;
 
-        if(maximumArea < currentDiagonal){
-            maximumDiagonal = area;
-            maximumArea = currentDiagonal;
+        if(currentDiagonal > maximumDiagonal){
+            maximumDiagonal = currentDiagonal;
+            maximumArea = area;
         }
-        else if(maximumArea === currentDiagonal){
-            maximumDiagonal = Math.max(maximumDiagonal, area);
+        else if(currentDiagonal === maximumDiagonal){
+            maximumArea = Math.max(maximumArea, area);
         }
     }
 
-    return maximumDiagonal;
+    return maximumArea;
     
 };
