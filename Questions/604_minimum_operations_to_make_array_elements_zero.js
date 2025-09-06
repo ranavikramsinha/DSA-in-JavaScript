@@ -1,6 +1,6 @@
 //* https://leetcode.com/problems/minimum-operations-to-make-array-elements-zero/
 
-//* tc : O(m * log(r)) | sc : O(1)
+//* tc : O(m * log(r_max)) | sc : O(1)
 
 var minOperations = function(queries) {
 
@@ -22,17 +22,17 @@ var minOperations = function(queries) {
         const R = BigInt(right);
 
         while (blockStart <= R) {
-        let blockEnd = 4n * blockStart - 1n;
-        let overlapStart = L > blockStart ? L : blockStart;
-        let overlapEnd = R < blockEnd ? R : blockEnd;
+            let blockEnd = 4n * blockStart - 1n;
+            let overlapStart = L > blockStart ? L : blockStart;
+            let overlapEnd = R < blockEnd ? R : blockEnd;
 
-        if (overlapStart <= overlapEnd) {
-            let overlapCount = overlapEnd - overlapStart + 1n;
-            totalSteps += overlapCount * weight;
-        }
+            if (overlapStart <= overlapEnd) {
+                let overlapCount = overlapEnd - overlapStart + 1n;
+                totalSteps += overlapCount * weight;
+            }
 
-        weight += 1n;
-        blockStart *= 4n;
+            weight += 1n;
+            blockStart *= 4n;
         }
 
         return totalSteps;
